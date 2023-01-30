@@ -1,10 +1,49 @@
-{% extends 'base.html' %}
 
+{% extends 'base.html' %}
+{% load static %}
 {% block title %}
-My Blog
-{% endblock  %}
+  My Blog
+{% endblock %} 
+{% block css_files %}
+<link rel="stylesheet" href="{% static "blog/index.css" %}"/>
+{% endblock %} 
 
 
 {% block content %}
-<h1> Welcome to my blog </h1>
-{% endblock  %}
+  <header id="main-navigation">
+    <h1><a href="">Anil's Blog</a></h1>
+    <nav>
+      <a href="">All Posts</a>
+    </nav>
+  </header>
+  <section id="welcome">
+    <header>
+      <img src="{% static "blog/images/pic.jpeg" %}" alt="Anil - Full Stack Developer" />
+      <h2>Anil's Blog</h2>
+    </header>
+      <p>Hi there 👋, I am Anil Verma I am a passionate Full Stack Web Developer who is fascinated by complex engineering problems.</p>
+   
+  </section>
+
+  <section id="latest-posts">
+    <h2>My Latest Articles</h2>
+    <ul>
+      <li>
+        <article class="post">
+          <a href="">
+            <img src="" alt="Mountains" />
+            <div class="post__content">
+              <h3>Full Stack Web Developer</h3>
+              <p>Full Stack Web Developer who is fascinated by complex engineering problems. Full Stack Web Developer who is fascinated by complex engineering problems.</p>
+            </div>
+          </a>
+        </article>
+      </li>
+    </ul>
+  </section>
+  <section id="about">
+    <h2>What I Do</h2>
+    <p>Hi there 👋, I am Anil Verma I am a passionate Full Stack Web Developer who is fascinated by complex engineering problems.Hi there 👋, I am Anil Verma I am a passionate Full Stack Web Developer who is fascinated by complex engineering problems.</p>
+    <p>Hi there 👋, I am Anil Verma I am a passionate Full Stack Web Developer who is fascinated by complex engineering problems.</p>
+  </section>
+{% endblock %}
