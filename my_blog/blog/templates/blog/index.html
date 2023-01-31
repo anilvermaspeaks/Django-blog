@@ -6,16 +6,11 @@
 {% endblock %} 
 {% block css_files %}
 <link rel="stylesheet" href="{% static "blog/index.css" %}"/>
+<link rel="stylesheet" href="{% static "blog/post.css" %}"/>
 {% endblock %} 
 
 
 {% block content %}
-  <header id="main-navigation">
-    <h1><a href="">Anil's Blog</a></h1>
-    <nav>
-      <a href="">All Posts</a>
-    </nav>
-  </header>
   <section id="welcome">
     <header>
       <img src="{% static "blog/images/pic.jpeg" %}" alt="Anil - Full Stack Developer" />
@@ -28,17 +23,10 @@
   <section id="latest-posts">
     <h2>My Latest Articles</h2>
     <ul>
-      <li>
-        <article class="post">
-          <a href="">
-            <img src="" alt="Mountains" />
-            <div class="post__content">
-              <h3>Full Stack Web Developer</h3>
-              <p>Full Stack Web Developer who is fascinated by complex engineering problems. Full Stack Web Developer who is fascinated by complex engineering problems.</p>
-            </div>
-          </a>
-        </article>
-      </li>
+     {% for  post in  posts %}
+      {% include "blog/includes/post.html" %}
+     {% endfor %}
+     
     </ul>
   </section>
   <section id="about">
